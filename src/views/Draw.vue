@@ -12,14 +12,14 @@
         <p id="result3"></p>
         <p id="result4"></p>
         <p id="result5"></p>
-        <p class="font-serif text-2xl" id="drawingText">Drawing Numbers...</p>
+        <p class="font-serif text-2xl animate-bounce w-10 h-10" id="drawingText">Drawing Numbers...</p>
         <p id="finalResult"></p>
-        <button class="flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="saveToHistory" id="HistoryBut">Save Result</button>
+        <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="saveToHistory" id="HistoryBut">Save Result</button>
+        <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="logOut" id="logOutBut">Log Out</button>
 </div>
 </template>
 
 <script>
-//import { collection } from '@firebase/firestore';
 import { doc, setDoc } from "firebase/firestore";
 import { db } from '../main'
 
@@ -44,8 +44,9 @@ export default {
   
     mounted(){ //Starting drawing progress with page change
         this.playerBets();
-        this.IntervalMethod = setInterval(this.randomResults,500);
-        this.betId = Math.floor(Math.random() * (10000 - 1 + 1)) + 1
+        this.IntervalMethod = setInterval(this.randomResults,4000);
+        document.getElementById("drawingText").style.visibility = "visible";
+        this.betId = Math.floor(Math.random() * (10000 - 1 + 1)) + 1;
 
    
     },
@@ -79,7 +80,6 @@ export default {
     randomResults(){ //Showing the random numbers with a time interval
 
         document.getElementById("result"+this.counter).innerHTML = this.randomNumber(); 
-        document.getElementById("drawingText").style.visibility = "visible";
         this.counter = this.counter +1;
         if(this.counter>5){
             clearInterval(this.IntervalMethod);
@@ -117,12 +117,13 @@ export default {
                 }
                 else if(correct === 0){
 
-                    document.getElementById("finalResult").innerHTML = "You got 0";
+                    document.getElementById("finalResult").innerHTML = "Good Job! You got 0";
                     this.moneyWon = "0$";
                     this.winStatus = "lost";
                 }
             }
         }
+        document.getElementById("drawingText").innerHTML = "Results are in!";
         this.$store.commit("SET_FINISH_DRAW",true);
         this.$store.commit("CLEAR_BET_ARRAY_DATA");
         this.$store.commit("SET_BET",false);
@@ -138,7 +139,6 @@ export default {
         }
     },
     saveToHistory(){ //saving player bets to account
-    console.log(this.betId);
     try{
         setDoc(doc(db, this.$store.state.users.email,this.betId+"" ), {
         betTimestamp : this.currTimestamp,
@@ -148,10 +148,26 @@ export default {
         BetStatus : this.winStatus
         }, {merge:true});
         alert("Saved To History Succesfully");
+
     }catch(e){
         console.log("error in " + e);
     }
         
+    },
+    logOut(){
+        try{
+            this.$store.commit("SET_AUTHENTICATION",false);
+            this.$store.commit("SET_BET",false);
+            this.$store.commit("USER_LOGGED_IN",false);
+            alert("Log out successful");
+
+            this.$router.push({path:"/"});  
+             
+        }catch(e){
+            alert("Error logging out " + e);
+        }
+
+
     }
     
   }
@@ -284,5 +300,10 @@ export default {
     bottom: 40%;
     font-size: 30px;
     visibility: hidden;
+}
+#logOutBut{
+    position:fixed;
+    bottom:94%;
+    left:70%;
 }
 </style>

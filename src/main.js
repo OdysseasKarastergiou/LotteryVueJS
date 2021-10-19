@@ -39,6 +39,7 @@ export const store = new Vuex.Store({
     authenticated:false,
     userPlayedBet:false,
     finishedDraw:true,
+    userLoggedIn:false,
 
     users:{
       email:"",
@@ -61,6 +62,9 @@ export const store = new Vuex.Store({
     },
     SET_BET(state,status){
       state.userPlayedBet = status;
+    },
+    USER_LOGGED_IN(state,status){
+      state.userLoggedIn = status;
     },
     SET_USER_DATA(state,email,password){
       state.users.email = email;

@@ -16,8 +16,8 @@
         <select class="bg-purple-300" v-model="input.fifthNumber" id="drop5">
             <option id="drop5-content" v-for="n in 30" :key="n" :value="n">{{ n }}</option>
         </select>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="submitNumbers" id="sumbitButId">Submit</button>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="logOut" id="logOutBut">Log Out</button>
+        <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="submitNumbers" id="sumbitButId">Submit</button>
+        <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="logOut" id="logOutBut">Log Out</button>
         
         <h1 id="resultMessage" ></h1>
                  
@@ -107,7 +107,9 @@ methods: {
         try{
             this.$store.commit("SET_AUTHENTICATION",false);
             this.$store.commit("SET_BET",false);
+            this.$store.commit("USER_LOGGED_IN",false);
             alert("Log out successful");
+
             this.$router.push({path:"/"});  
              
         }catch(e){

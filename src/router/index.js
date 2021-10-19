@@ -14,12 +14,26 @@ export const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    beforeEnter:(to,from,next) =>{
+      if(store.state.userLoggedIn == true){
+        next(false);
+      }else{
+        next();
+      }
+    }
   },  
   {
     path: '/register',
     name: 'Register',
-    component: Register
+    component: Register,
+    beforeEnter:(to,from,next) =>{
+      if(store.state.userLoggedIn == true){
+        next(false);
+      }else{
+        next();
+      }
+    }
   },
 
   {
