@@ -12,7 +12,7 @@
       <td class="border-collapse border border-green-800">{{row.drawNumbersArray}}</td>
       <td class="border-collapse border border-green-800 font-bold">{{row.playedBetStatus}}</td>
       <td class="border-collapse border border-green-800 font-bold">{{row.playerWinnings}}</td>
-      <td><button @click='deleteTableRow(i)'>Delete</button></td>
+      <td><button @click='deleteTableRow(i,row)'>Delete</button></td>
     </tr>
 
   </tbody>
@@ -26,7 +26,7 @@
 <script>
 import { db } from '../main.js'
 import { collection, getDocs } from "firebase/firestore";
-import { deleteDoc } from "firebase/firestore";
+import { doc, deleteDoc } from "firebase/firestore";
 
 
 export default {
@@ -42,7 +42,8 @@ export default {
           timestamp:"",
           playerNumbersArray:"",
           playerWinnings:"",
-          playedBetStatus:""}],
+          playedBetStatus:"",
+          playerDocID:""}],
       }
 
     },
@@ -66,7 +67,8 @@ export default {
         const querySnapshot = await getDocs(collection(db,this.$store.state.users.email));
         querySnapshot.forEach((doc) => {
         this.userHistoryData.push({timestamp:doc.data().betTimestamp,drawNumbersArray:doc.data().drawNumbers,
-        playerNumbersArray:doc.data().playerNumbers,playerWinnings:doc.data().MoneyWon,playedBetStatus:doc.data().BetStatus});
+        playerNumbersArray:doc.data().playerNumbers,playerWinnings:doc.data().MoneyWon,playedBetStatus:doc.data().BetStatus,
+        playerDocID:doc.id});
         });
       },
       logOut(){ //loggin out
@@ -82,10 +84,11 @@ export default {
             alert("Error logging out " + e);
         }
         },
-      deleteTableRow: function(idx){  //deleting table row
+      deleteTableRow: function(idx,index){  //deleting table row and finding DocumentId to delete from database
         this.userHistoryData.splice(idx,1);
         alert("Deleted line from history!");
-        deleteDoc(collection(db, this.$store.state.users.email, idx));
+        console.log(index.playerDocID);
+        deleteDoc(doc(db, this.$store.state.users.email, index.playerDocID));
       }
 
 
