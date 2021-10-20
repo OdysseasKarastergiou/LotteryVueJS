@@ -1,6 +1,3 @@
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/App.vue?vue&type=style&index=0&lang=css& ***!
-  \********************************************************************************************************************************************************************************************************************/
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -20,52 +17,43 @@
   color: #42b983;
 }
 
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/views/Home.vue?vue&type=style&index=0&id=fae5bece&scoped=true&lang=css& ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
 
-#model-signup[data-v-fae5bece]{
+#model-signup[data-v-3fd2e143]{
   position:absolute;
   top:50%;
   left:50%;
   margin-top: -200px;
   margin-left: -100px;
 }
-#login-password[data-v-fae5bece]{
+#login-password[data-v-3fd2e143]{
   margin-left:8px;
 }
-#logInButtonId[data-v-fae5bece]{
+#logInButtonId[data-v-3fd2e143]{
   margin-left: 28px;
 }
 
-/*!*******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/views/Register.vue?vue&type=style&index=0&id=63ae9146&scoped=true&lang=css& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************/
 
-#model-signup[data-v-63ae9146]{
+#model-signup[data-v-33d58806]{
   position:absolute;
   top:50%;
   left:50%;
   margin-top: -200px;
   margin-left: -100px;
 }
-#register-password[data-v-63ae9146]{
+#register-password[data-v-33d58806]{
   margin-left:27px;
 }
-#buttonId[data-v-63ae9146]{
+#buttonId[data-v-33d58806]{
   margin-left:15px;
 }
 
-/*!******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/views/Lottery.vue?vue&type=style&index=0&id=338c617f&scoped=true&lang=css& ***!
-  \******************************************************************************************************************************************************************************************************************************************************/
 
-#pickId[data-v-338c617f]{
+#pickId[data-v-707b4fea]{
     position: fixed;
     font-size: 30px;
     left:10%;
 }
-#drop1[data-v-338c617f]{
+#drop1[data-v-707b4fea]{
     position: fixed;
     width: 50px;
     height: 50px;
@@ -73,10 +61,10 @@
     left:10%;
     bottom: 80%;
 }
-#drop1-content[data-v-338c617f]{
+#drop1-content[data-v-707b4fea]{
     font-size:25px;
 }
-#drop2[data-v-338c617f]{
+#drop2[data-v-707b4fea]{
     position: fixed;
     width: 50px;
     height: 50px;
@@ -84,10 +72,10 @@
     left:15%;
     bottom: 80%;
 }
-#drop2-content[data-v-338c617f]{
+#drop2-content[data-v-707b4fea]{
     font-size:25px;
 }
-#drop3[data-v-338c617f]{
+#drop3[data-v-707b4fea]{
     position: fixed;
     width: 50px;
     height: 50px;
@@ -95,10 +83,10 @@
     left:20%;
     bottom: 80%;
 }
-#drop3-content[data-v-338c617f]{
+#drop3-content[data-v-707b4fea]{
     font-size:25px;
 }
-#drop4[data-v-338c617f]{
+#drop4[data-v-707b4fea]{
     position: fixed;
     width: 50px;
     height: 50px;
@@ -106,10 +94,10 @@
     left:25%;
     bottom: 80%;
 }
-#drop4-content[data-v-338c617f]{
+#drop4-content[data-v-707b4fea]{
     font-size:25px;
 }
-#drop5[data-v-338c617f]{
+#drop5[data-v-707b4fea]{
     position: fixed;
     width: 50px;
     height: 50px;
@@ -117,32 +105,29 @@
     left:30%;
     bottom: 80%;
 }
-#drop5-content[data-v-338c617f]{
+#drop5-content[data-v-707b4fea]{
     font-size:25px;
 }
-#sumbitButId[data-v-338c617f]{
+#sumbitButId[data-v-707b4fea]{
     position: fixed;
     font-size: 25px;
     left:10%;
     bottom:70%;
 }
-#resultMessage[data-v-338c617f]{
+#resultMessage[data-v-707b4fea]{
     position: fixed;
     bottom:50%;
     left:20%
 }
-#logOutBut[data-v-338c617f]{
+#logOutBut[data-v-707b4fea]{
     position:fixed;
     bottom:94%;
     left:70%;
 }
 
 
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/views/Draw.vue?vue&type=style&index=0&id=6e3e9e7e&scoped=true&lang=css& ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
 
-#result1[data-v-6e3e9e7e]{
+#result1[data-v-11f619b2]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -151,7 +136,7 @@
     bottom:77%;
     left:60%;
 }
-#result2[data-v-6e3e9e7e]{
+#result2[data-v-11f619b2]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -160,7 +145,7 @@
     bottom:77%;
     left:65%;
 }
-#result3[data-v-6e3e9e7e]{
+#result3[data-v-11f619b2]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -169,7 +154,7 @@
     bottom:77%;
     left:70%;
 }
-#result4[data-v-6e3e9e7e]{
+#result4[data-v-11f619b2]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -178,7 +163,7 @@
     bottom:77%;
     left:75%;
 }
-#result5[data-v-6e3e9e7e]{
+#result5[data-v-11f619b2]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -187,7 +172,7 @@
     bottom:77%;
     left:80%;
 }
-#myNumber1[data-v-6e3e9e7e]{
+#myNumber1[data-v-11f619b2]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -196,7 +181,7 @@
     bottom:77%;
     left:15%;
 }
-#myNumber2[data-v-6e3e9e7e]{
+#myNumber2[data-v-11f619b2]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -205,7 +190,7 @@
     bottom:77%;
     left:20%;
 }
-#myNumber3[data-v-6e3e9e7e]{
+#myNumber3[data-v-11f619b2]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -214,7 +199,7 @@
     bottom:77%;
     left:25%;
 }
-#myNumber4[data-v-6e3e9e7e]{
+#myNumber4[data-v-11f619b2]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -223,7 +208,7 @@
     bottom:77%;
     left:30%;
 }
-#myNumber5[data-v-6e3e9e7e]{
+#myNumber5[data-v-11f619b2]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -232,54 +217,51 @@
     bottom:77%;
     left:35%;
 }
-#playerBetsT[data-v-6e3e9e7e]{
+#playerBetsT[data-v-11f619b2]{
     position: fixed;
     left:20%;
     font-size: 30px;
     bottom: 87%;
 }
-#resultBetsT[data-v-6e3e9e7e]{
+#resultBetsT[data-v-11f619b2]{
     position: fixed;
     left:65%;
     font-size: 30px;
     bottom: 87%;
 }
-#finalResult[data-v-6e3e9e7e]{
+#finalResult[data-v-11f619b2]{
     position: fixed;
     bottom: 50%;
     left:50%;
     font-size: 30px;
 }
-#drawingText[data-v-6e3e9e7e]{
+#drawingText[data-v-11f619b2]{
     position: fixed;
     left:70%;
     bottom:60%;
     visibility: hidden;
 }
-#HistoryBut[data-v-6e3e9e7e]{
+#HistoryBut[data-v-11f619b2]{
     position: fixed;
     left:50%;
     bottom: 40%;
     font-size: 30px;
     visibility: hidden;
 }
-#logOutBut[data-v-6e3e9e7e]{
+#logOutBut[data-v-11f619b2]{
     position:fixed;
     bottom:94%;
     left:70%;
 }
 
-/*!******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/views/History.vue?vue&type=style&index=0&id=ba0a5d6c&scoped=true&lang=css& ***!
-  \******************************************************************************************************************************************************************************************************************************************************/
 
-table[data-v-ba0a5d6c]{
+table[data-v-03784b06]{
   border-collapse: collapse;
 }
-td[data-v-ba0a5d6c]{
+td[data-v-03784b06]{
   padding: 5px 20px;
 }
-#logOutBut[data-v-ba0a5d6c]{
+#logOutBut[data-v-03784b06]{
     position:fixed;
     bottom:94%;
     left:70%;
@@ -287,9 +269,6 @@ td[data-v-ba0a5d6c]{
 
 
 
-/*!*****************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/tailwindcss/tailwind.css ***!
-  \*****************************************************************************************/
 @tailwind base;
 
 @tailwind components;
