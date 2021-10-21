@@ -277,6 +277,15 @@ td[data-v-2d8413d8]{
 
 
 
+
+.center[data-v-47e3a280] {
+    position: absolute;
+    left:45%;
+    top:50%;
+    margin-top:-150px;
+    margin-left:-150px;
+}
+
 @tailwind base;
 
 @tailwind components;
