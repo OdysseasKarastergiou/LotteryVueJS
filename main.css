@@ -18,33 +18,45 @@
 }
 
 
-#model-signup[data-v-2cc5061f]{
+#model-login[data-v-814acf4a]{
   position:absolute;
   top:50%;
-  left:50%;
+  left:36%;
   margin-top: -200px;
   margin-left: -100px;
 }
-#login-password[data-v-2cc5061f]{
+#login-password[data-v-814acf4a]{
   margin-left:8px;
+  font-size:40px;
 }
-#logInButtonId[data-v-2cc5061f]{
+#login-email[data-v-814acf4a]{
+  margin-left:0px;
+  font-size:40px;
+}
+#logInButtonId[data-v-814acf4a]{
   margin-left: 28px;
+  font-size:45px;
 }
 
 
-#model-signup[data-v-5241a5a2]{
+#model-register[data-v-404c1024]{
   position:absolute;
   top:50%;
-  left:50%;
+  left:35%;
   margin-top: -200px;
   margin-left: -100px;
 }
-#register-password[data-v-5241a5a2]{
-  margin-left:27px;
+#register-password[data-v-404c1024]{
+  margin-left:30px;
+  font-size:40px;
 }
-#buttonId[data-v-5241a5a2]{
+#register-email[data-v-404c1024]{
+  margin-left:-10px;
+  font-size:40px;
+}
+#buttonId[data-v-404c1024]{
   margin-left:15px;
+  font-size:40px;
 }
 
 
@@ -127,7 +139,7 @@
 
 
 
-#result1[data-v-094f1f06]{
+#result1[data-v-dbbcd644]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -136,7 +148,7 @@
     bottom:77%;
     left:60%;
 }
-#result2[data-v-094f1f06]{
+#result2[data-v-dbbcd644]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -145,7 +157,7 @@
     bottom:77%;
     left:65%;
 }
-#result3[data-v-094f1f06]{
+#result3[data-v-dbbcd644]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -154,7 +166,7 @@
     bottom:77%;
     left:70%;
 }
-#result4[data-v-094f1f06]{
+#result4[data-v-dbbcd644]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -163,7 +175,7 @@
     bottom:77%;
     left:75%;
 }
-#result5[data-v-094f1f06]{
+#result5[data-v-dbbcd644]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -172,7 +184,7 @@
     bottom:77%;
     left:80%;
 }
-#myNumber1[data-v-094f1f06]{
+#myNumber1[data-v-dbbcd644]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -181,7 +193,7 @@
     bottom:77%;
     left:15%;
 }
-#myNumber2[data-v-094f1f06]{
+#myNumber2[data-v-dbbcd644]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -190,7 +202,7 @@
     bottom:77%;
     left:20%;
 }
-#myNumber3[data-v-094f1f06]{
+#myNumber3[data-v-dbbcd644]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -199,7 +211,7 @@
     bottom:77%;
     left:25%;
 }
-#myNumber4[data-v-094f1f06]{
+#myNumber4[data-v-dbbcd644]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -208,7 +220,7 @@
     bottom:77%;
     left:30%;
 }
-#myNumber5[data-v-094f1f06]{
+#myNumber5[data-v-dbbcd644]{
     position:fixed;
     border-style:solid;
     width: 50px;
@@ -217,84 +229,93 @@
     bottom:77%;
     left:35%;
 }
-#playerBetsT[data-v-094f1f06]{
+#playerBetsT[data-v-dbbcd644]{
     position: fixed;
     left:22%;
     font-size: 30px;
     bottom: 87%;
 }
-#resultBetsT[data-v-094f1f06]{
+#resultBetsT[data-v-dbbcd644]{
     position: fixed;
     left:65%;
     font-size: 30px;
     bottom: 87%;
 }
-#finalResult[data-v-094f1f06]{
+#finalResult[data-v-dbbcd644]{
     position: fixed;
     bottom: 40%;
     left:45%;
     font-size: 30px;
 }
-#drawingText[data-v-094f1f06]{
+#drawingText[data-v-dbbcd644]{
     position: fixed;
     left:70%;
     bottom:60%;
     visibility: hidden;
 }
-#HistoryBut[data-v-094f1f06]{
+#HistoryBut[data-v-dbbcd644]{
     position: fixed;
     left:45%;
     bottom:30%;
     font-size: 30px;
     visibility: hidden;
 }
-#logOutBut[data-v-094f1f06]{
+#logOutBut[data-v-dbbcd644]{
     position:fixed;
     bottom:94%;
     left:70%;
 }
-div[data-v-094f1f06]{
+div[data-v-dbbcd644]{
    display: flex;
   justify-content: center;
   align-items: center;
 }
+.imgC[data-v-dbbcd644]{
+    position:fixed;
+    width:30%;
+    bottom:30%;
+    left:10%;
+}
 
 
-div[data-v-118762e0]{
+div[data-v-78ceb568]{
   border-collapse: collapse;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-td[data-v-118762e0]{
+td[data-v-78ceb568]{
   padding: 5px 20px;
 }
-#logOutBut[data-v-118762e0]{
+#logOutBut[data-v-78ceb568]{
     position:fixed;
     bottom:94%;
     left:70%;
 }
-.lostBet[data-v-118762e0]{
+.lostBet[data-v-78ceb568]{
   color: red;
 }
-.wonBet[data-v-118762e0]{
+.wonBet[data-v-78ceb568]{
   color: green;
 }
 
 
 
 
-.centerTxt[data-v-d15b7aae] {
+.centerTxt[data-v-735f077e] {
 position: absolute;
-left:40%;
-top:50%;
+left:30%;
+top:35%;
+font-size: 40px;
 margin-top:-150px;
 margin-left:-150px;
 }
-.centerImg[data-v-d15b7aae]{
+.centerImg[data-v-735f077e]{
   position: absolute;
-  left:50%;
-  bottom:40%;
+  left:42%;
+  bottom:30%;
+  width:30%;
+  height:30%;
   margin-top:-150px;
   margin-left:-150px;
 }
