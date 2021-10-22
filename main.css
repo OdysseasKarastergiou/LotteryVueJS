@@ -260,30 +260,43 @@ div[data-v-094f1f06]{
 }
 
 
-div[data-v-2d8413d8]{
+div[data-v-118762e0]{
   border-collapse: collapse;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-td[data-v-2d8413d8]{
+td[data-v-118762e0]{
   padding: 5px 20px;
 }
-#logOutBut[data-v-2d8413d8]{
+#logOutBut[data-v-118762e0]{
     position:fixed;
     bottom:94%;
     left:70%;
 }
+.lostBet[data-v-118762e0]{
+  color: red;
+}
+.wonBet[data-v-118762e0]{
+  color: green;
+}
 
 
 
 
-.center[data-v-47e3a280] {
-    position: absolute;
-    left:45%;
-    top:50%;
-    margin-top:-150px;
-    margin-left:-150px;
+.centerTxt[data-v-d15b7aae] {
+position: absolute;
+left:40%;
+top:50%;
+margin-top:-150px;
+margin-left:-150px;
+}
+.centerImg[data-v-d15b7aae]{
+  position: absolute;
+  left:50%;
+  bottom:40%;
+  margin-top:-150px;
+  margin-left:-150px;
 }
 
 @tailwind base;
