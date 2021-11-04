@@ -1,11 +1,14 @@
 <template>
     <div id="app">
-        <div class="p-5 m-1" id="pickId">Welcome, {{this.$store.state.users.email}}. Pick the numbers!</div>
+        <div class="p-5 m-1" id="pickId">
+            Welcome, {{this.$store.state.users.email}}. Pick the numbers!
+        </div>
         <div>
             <SelectLottery @submitEvent="submitNumbers"></SelectLottery>
         </div>
-        <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="logOut" id="logOutBut">Log Out</button>
-        
+        <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 
+        hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" 
+        v-on:click="logOut" id="logOutBut">Log Out</button>
         <h1 id="resultMessage" ></h1>
                  
          

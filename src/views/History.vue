@@ -10,14 +10,17 @@
   <tbody>
     <tr v-for="(row,i) in sortedArray" v-bind:key="i">
       <td class="border-collapse border border-green-800 font-extrabold text-yellow-600">{{row.drawNumbersArray}}</td>
-      <td v-bind:class="{lostBet:row.playedBetStatus===`lost`,wonBet:row.playedBetStatus===`won`}" class="border-collapse border border-green-800 font-bold">{{row.playedBetStatus}}</td>
-      <td v-bind:class="{lostBet:row.playerWinnings===`0$`,wonBet:row.playerWinnings!==`0$`}" class="border-collapse border border-green-800 font-bold">{{row.playerWinnings}}</td>
+      <td v-bind:class="{lostBet:row.playedBetStatus===`lost`,wonBet:row.playedBetStatus===`won`}" 
+      class="border-collapse border border-green-800 font-bold">{{row.playedBetStatus}}</td>
+      <td v-bind:class="{lostBet:row.playerWinnings===`0$`,wonBet:row.playerWinnings!==`0$`}" 
+      class="border-collapse border border-green-800 font-bold">{{row.playerWinnings}}</td>
       <td><button class="text-yellow-900 font-semibold" @click='deleteTableRow(i,row)'>Delete</button></td>
     </tr>
 
   </tbody>
 </table>
-<button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="logOut" id="logOutBut">Log Out</button>
+<button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500
+ hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="logOut" id="logOutBut">Log Out</button>
 </div>
 
   
