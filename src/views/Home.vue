@@ -34,7 +34,7 @@ export default {
         const password = passwordInput;
         const user = userCredential.user;
         this.$store.commit("SET_AUTHENTICATION",true);
-        this.$store.commit("SET_USER_DATA",name,password);
+        this.$store.dispatch("authData",name,password);
         this.$store.commit("USER_LOGGED_IN",true);
         this.$router.push({path:"Lottery", params:{name}}).catch(()=>{});
           

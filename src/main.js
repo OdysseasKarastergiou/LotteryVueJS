@@ -85,6 +85,9 @@ export const store = new Vuex.Store({
     }
   },
   actions:{
+    authData(context,email,password){
+      context.commit("SET_USER_DATA",email,password);
+    }
 
   },
   getters:{

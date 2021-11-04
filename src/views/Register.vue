@@ -31,7 +31,7 @@ export default {
     const user = userCredential.user;
     try{
       this.$store.commit("SET_AUTHENTICATION",true);
-      this.$store.commit("SET_USER_DATA",name,password);
+      this.$store.dispatch("authData",name,password);
       this.$store.commit("USER_LOGGED_IN",true);
       alert("Register Successful");
     }catch(e){

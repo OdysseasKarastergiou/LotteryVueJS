@@ -78,6 +78,7 @@ export default {
           alert("User has no history!");
           this.$router.push({path:"/Lottery"});
         }
+
         
       },
       logOut(){ //loggin out
