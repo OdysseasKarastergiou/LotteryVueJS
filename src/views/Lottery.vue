@@ -1,22 +1,9 @@
 <template>
     <div id="app">
-        <div id="pickId">Welcome, {{this.$store.state.users.email}}. Pick the numbers!</div>
-        <select class="bg-purple-300" v-model="input.firstNumber" id="drop1">
-            <option id="drop1-content" v-for="n in 30" :key="n" :value="n">{{ n }}</option>
-        </select>
-        <select class="bg-purple-300" v-model="input.secondNumber" id="drop2">
-            <option id="drop2-content" v-for="n in 30" :key="n" :value="n">{{ n }}</option>
-        </select>
-        <select class="bg-purple-300" v-model="input.thirdNumber" id="drop3">
-            <option id="drop3-content" v-for="n in 30" :key="n" :value="n">{{ n }}</option>
-        </select>
-        <select class="bg-purple-300" v-model="input.fourthNumber" id="drop4">;
-            <option id="drop4-content" v-for="n in 30" :key="n" :value="n">{{ n }}</option>
-        </select>
-        <select class="bg-purple-300" v-model="input.fifthNumber" id="drop5">
-            <option id="drop5-content" v-for="n in 30" :key="n" :value="n">{{ n }}</option>
-        </select>
-        <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="submitNumbers" id="sumbitButId">Submit</button>
+        <div class="p-5 m-1" id="pickId">Welcome, {{this.$store.state.users.email}}. Pick the numbers!</div>
+        <div>
+            <SelectLottery @submitEvent="submitNumbers"></SelectLottery>
+        </div>
         <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="logOut" id="logOutBut">Log Out</button>
         
         <h1 id="resultMessage" ></h1>
@@ -27,10 +14,14 @@
 </template>
 
 <script>
+import SelectLottery from "../components/Lottery.vue"
 
 
 export default {
   name: 'Lottery',
+  components:{
+      SelectLottery
+  },
   props: {
 
     msg: String,
@@ -38,46 +29,26 @@ export default {
         hasDuplicates : Boolean
     }
   },
-
-  
-  
-  data(){
-    return{
-
-        numberPicks: [],
-
-        input:{
-            firstNumber:"",
-            secondNumber:"",
-            thirdNumber:"",
-            fourthNumber:"",
-            fifthNumber:""
-        }
-    }
-},
 methods: {
-    submitNumbers(){  // placing bet and checking for errors
+    submitNumbers(str){  // placing bet and checking for errors
         var counter = 0;
         let correctBet = false;
         const finalPicks = [];
-
-
-        this.numberPicks.push(this.input.firstNumber,this.input.secondNumber,this.input.thirdNumber,this.input.fourthNumber,this.input.fifthNumber);
-        for(const item of this.numberPicks){
+        for(const item of str){
             if(item){
                 counter = counter+1;
                 
             }
-            for(var i=0;i<this.numberPicks.length;i++){
-                for(var j = i+1;j<this.numberPicks.length;j++){
-                    if(this.numberPicks[i] === this.numberPicks[j]){
+            for(var i=0;i<str.length;i++){
+                for(var j = i+1;j<str.length;j++){
+                    if(str[i] === str[j]){
                         this.hasDuplicates = true;
                     }
                 }
 
             }
             if(counter == 5 && !this.hasDuplicates){
-                for(const item2 of this.numberPicks){
+                for(const item2 of str){
                     finalPicks.push(item2);
                     correctBet = true;
                     ////
@@ -91,7 +62,7 @@ methods: {
         if(correctBet){
             this.$store.commit("SET_BET",true);
             this.$store.commit("SET_FINISH_DRAW",false);
-            for(var y=0;y<this.numberPicks.length;y++){
+            for(var y=0;y<str.length;y++){
                 this.$store.commit("SET_BET_ARRAY_DATA",finalPicks[y]);
             }
 
@@ -99,7 +70,7 @@ methods: {
             this.$router.push({name: 'Draw'});
         }
         this.hasDuplicates = false;
-        this.numberPicks.splice(0);
+        str.splice(0);
         counter = 0;
         
     },
@@ -128,12 +99,13 @@ methods: {
 
 <style scoped>
 #pickId{
-    position: fixed;
-    font-size: 30px;
+    position: inherit;
+    font-size: 40px;
     left:10%;
 
 
 }
+
 
 #drop1{
     position: fixed;

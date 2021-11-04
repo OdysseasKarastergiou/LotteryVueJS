@@ -1,18 +1,18 @@
 <template>
-<div>
-<table class="table-striped table-auto bg-purple-300 shadow-inner opacity-75 ">
+<div class="">
+<table class="table-striped table-auto bg-purple-300 shadow-inner text-4xl opacity-75">
   <thead id="table">
-    <th class="border-collapse border border-green-800">Draw Numbers</th>
-    <th class="border-collapse border border-green-800">Status</th>
-    <th class="border-collapse border border-green-800">Amount Won/Lost</th>
-    <th class="border-collapse border border-green-800">s</th>
+    <th class="border-collapse border border-green-800 text-red-800">Draw Numbers</th>
+    <th class="border-collapse border border-green-800 text-red-800">Status</th>
+    <th class="border-collapse border border-green-800 text-red-800">Amount Won</th>
+    <th class="border-collapse border border-green-800 text-red-800">Delete Entry</th>
   </thead>
   <tbody>
     <tr v-for="(row,i) in sortedArray" v-bind:key="i">
-      <td class="border-collapse border border-green-800">{{row.drawNumbersArray}}</td>
-      <td class="border-collapse border border-green-800 font-bold">{{row.playedBetStatus}}</td>
-      <td class="border-collapse border border-green-800 font-bold">{{row.playerWinnings}}</td>
-      <td><button @click='deleteTableRow(i,row)'>Delete</button></td>
+      <td class="border-collapse border border-green-800 font-extrabold text-yellow-600">{{row.drawNumbersArray}}</td>
+      <td v-bind:class="{lostBet:row.playedBetStatus===`lost`,wonBet:row.playedBetStatus===`won`}" class="border-collapse border border-green-800 font-bold">{{row.playedBetStatus}}</td>
+      <td v-bind:class="{lostBet:row.playerWinnings===`0$`,wonBet:row.playerWinnings!==`0$`}" class="border-collapse border border-green-800 font-bold">{{row.playerWinnings}}</td>
+      <td><button class="text-yellow-900 font-semibold" @click='deleteTableRow(i,row)'>Delete</button></td>
     </tr>
 
   </tbody>
@@ -65,11 +65,17 @@ export default {
     methods:{
       async showPlayerData(){  //getting player history from database 
         const querySnapshot = await getDocs(collection(db,this.$store.state.users.email));
-        querySnapshot.forEach((doc) => {
-        this.userHistoryData.push({timestamp:doc.data().betTimestamp,drawNumbersArray:doc.data().drawNumbers,
-        playerNumbersArray:doc.data().playerNumbers,playerWinnings:doc.data().MoneyWon,playedBetStatus:doc.data().BetStatus,
-        playerDocID:doc.id});
+          querySnapshot.forEach((doc) => {
+          this.userHistoryData.push({timestamp:doc.data().betTimestamp,drawNumbersArray:doc.data().drawNumbers,
+          playerNumbersArray:doc.data().playerNumbers,playerWinnings:doc.data().MoneyWon,playedBetStatus:doc.data().BetStatus,
+          playerDocID:doc.id});
+          
         });
+        if(this.userHistoryData.length ===1){
+          alert("User has no history!");
+          this.$router.push({path:"/Lottery"});
+        }
+        
       },
       logOut(){ //loggin out
         try{
@@ -99,8 +105,11 @@ export default {
 </script>
 
 <style scoped>
-table{
+div{
   border-collapse: collapse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 td{
   padding: 5px 20px;
@@ -109,6 +118,12 @@ td{
     position:fixed;
     bottom:94%;
     left:70%;
+}
+.lostBet{
+  color: red;
+}
+.wonBet{
+  color: green;
 }
 
 

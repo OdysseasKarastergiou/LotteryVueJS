@@ -5,6 +5,7 @@ import Register from '../views/Register.vue'
 import Lottery from '../views/Lottery.vue'
 import Draw from '../views/Draw.vue'
 import History from '../views/History.vue'
+import MainPage from '../views/LotteryVueJS.vue'
 import { store } from '../main.js'
 
 Vue.use(VueRouter)
@@ -22,7 +23,7 @@ export const routes = [
         next();
       }
     }
-  },  
+  },
   {
     path: '/register',
     name: 'Register',
@@ -34,6 +35,11 @@ export const routes = [
         next();
       }
     }
+  },
+  {
+    path: '/LotteryVueJS',
+    name: 'MainPage',
+    component: MainPage
   },
 
   {

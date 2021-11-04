@@ -6,11 +6,11 @@
     <form  @submit.prevent="register"  id="register-form">
       <div class="input-field appearance-none block w-full bg-blue-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
         <input v-model="input.emailInput" type="email" id="register-email" placeholder="email@example.com" required />
-        <label class="bg-green-500 text-white font-italic py-1 px-2 rounded-full" for="register-email">Email Address</label>
+        <label class="text-black font-italic py-1 px-2 text-4xl" for="register-email">Email Address</label>
       </div>
       <div class="input-field appearance-none block w-full bg-blue-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
        <input v-model="input.passwordInput" type="password" id="register-password" placeholder="password" required />
-       <label class="bg-green-500 text-white font-italic py-1 px-2 rounded-full" for="register-password">Choose Password</label>
+       <label class=" text-black font-italic py-1 px-2 text-4xl" for="register-password">Choose Password</label>
       </div>
       <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit" id="buttonId">Register</button>
       <h2 id="reg-error"></h2>
@@ -76,17 +76,23 @@ export default {
 </script>
 
 <style scoped>
-#model-signup{
+#model-register{
   position:absolute;
   top:50%;
-  left:50%;
+  left:35%;
   margin-top: -200px;
   margin-left: -100px;
 }
 #register-password{
-  margin-left:27px;
+  margin-left:30px;
+  font-size:40px;
+}
+#register-email{
+  margin-left:-10px;
+  font-size:40px;
 }
 #buttonId{
   margin-left:15px;
+  font-size:40px;
 }
 </style>

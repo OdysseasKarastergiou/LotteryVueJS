@@ -1,15 +1,17 @@
 <template>
   <div class="bg-green-200" id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/Register">Register</router-link> |
-      <router-link to="/Lottery">Lottery</router-link> |
-      <router-link to="/Draw">Draw</router-link> |
+      <router-link v-if="this.$store.state.authenticated==false" to="/">Home  |</router-link>
+      <router-link v-if="this.$store.state.authenticated==false" to="/Register">Register  |</router-link>
+      <router-link to="/Lottery">Lottery  |</router-link>
+      <router-link to="/Draw">Draw  |</router-link>
       <router-link to="/History">History</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+
 
 <style>
 #app {

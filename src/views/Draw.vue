@@ -1,21 +1,23 @@
 <template>
 <div>
-    <div id="playerBetsT">Player Bets</div>
-    <div id="resultBetsT">Final Results </div>
-    <p id="myNumber1"></p>
-        <p id="myNumber2"></p>
-        <p id="myNumber3"></p>
-        <p id="myNumber4"></p>
-        <p id="myNumber5"></p>
-     <p id="result1"></p>
-        <p id="result2"></p>
-        <p id="result3"></p>
-        <p id="result4"></p>
-        <p id="result5"></p>
-        <p class="font-serif text-2xl animate-bounce w-10 h-10" id="drawingText">Drawing Numbers...</p>
-        <p id="finalResult"></p>
-        <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="saveToHistory" id="HistoryBut">Save Result</button>
-        <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="logOut" id="logOutBut">Log Out</button>
+    <div class="text-purple-500 font-bold" id="playerBetsT">Player Bets</div>
+    <div class="text-purple-500 font-bold" id="resultBetsT">Final Results </div>
+    <p class="text-yellow-700 font-extrabold" id="myNumber1"></p>
+    <p class="text-yellow-700 font-extrabold" id="myNumber2"></p>
+    <p class="text-yellow-700 font-extrabold" id="myNumber4"></p>
+    <p class="text-yellow-700 font-extrabold" id="myNumber5"></p>
+    <p class="text-yellow-700 font-extrabold" id="myNumber3"></p>
+    <p class="rounded-full h-24 w-24 flex items-center justify-center" id="result1"></p>
+    <p class="rounded-full h-24 w-24 flex items-center justify-center"  id="result2"></p>
+    <p class="rounded-full h-24 w-24 flex items-center justify-center" id="result3"></p>
+    <p class="rounded-full h-24 w-24 flex items-center justify-center" id="result4"></p>
+    <p class="rounded-full h-24 w-24 flex items-center justify-center" id="result5"></p>
+    <p class="font-serif text-2xl animate-bounce w-10 h-10 font-bold" id="drawingText">Drawing Numbers...</p>
+    <img class="imgC" v-if="this.winStatus==`lost`" src="https://www.onlygfx.com/wp-content/uploads/2020/05/fail-stamp-7.png">
+    <img class="imgC" v-if="this.winStatus==`won`" src="https://img.favpng.com/16/6/19/stock-photography-car-royalty-free-png-favpng-E0kmgvAXMbienrUxAzw37dHwF_t.jpg">
+    <p id="finalResult"></p>
+    <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="saveToHistory" id="HistoryBut">Save Result</button>
+    <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="logOut" id="logOutBut">Log Out</button>
 </div>
 </template>
 
@@ -271,7 +273,7 @@ export default {
 }
 #playerBetsT{
     position: fixed;
-    left:20%;
+    left:22%;
     font-size: 30px;
     bottom: 87%;
 }
@@ -283,8 +285,8 @@ export default {
 }
 #finalResult{
     position: fixed;
-    bottom: 50%;
-    left:50%;
+    bottom: 40%;
+    left:45%;
     font-size: 30px;
 }
 #drawingText{
@@ -296,8 +298,8 @@ export default {
 }
 #HistoryBut{
     position: fixed;
-    left:50%;
-    bottom: 40%;
+    left:45%;
+    bottom:30%;
     font-size: 30px;
     visibility: hidden;
 }
@@ -305,5 +307,16 @@ export default {
     position:fixed;
     bottom:94%;
     left:70%;
+}
+div{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgC{
+    position:fixed;
+    width:30%;
+    bottom:30%;
+    left:10%;
 }
 </style>

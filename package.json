@@ -12,7 +12,7 @@
     "watch": "webpack --watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build-css": "tailwindcss build src/styles.css -o public/styles.css"
+    "build-css": "tailwindcss build src/styles.css -o build/styles.css"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -44,6 +44,7 @@
     "css-loader": "^6.4.0",
     "eslint": "^8.0.1",
     "eslint-plugin-vue": "^7.19.1",
+    "file-loader": "^6.2.0",
     "gh-pages": "^3.2.3",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
@@ -57,6 +58,7 @@
     "style-loader": "^3.3.0",
     "stylelint-config-recommended": "^5.0.0",
     "tailwindcss": "^2.2.17",
+    "url-loader": "^4.1.1",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^5.59.0",
     "webpack-cli": "^4.9.0",
