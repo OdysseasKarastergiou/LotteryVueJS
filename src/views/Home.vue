@@ -1,5 +1,5 @@
 <template>
-<LoginModal @loginEvent="login"></LoginModal>
+<login-modal @loginEvent="login"></login-modal>
 </template>
 
 <script>
@@ -11,16 +11,6 @@ export default {
   name: 'Login',
   components:{
     LoginModal
-  },
-
-  props: {
-    msg: String
-  },
-
-  computed:{
-    getUser(){
-      return this.$store.getters.getUser;     ////////
-    }
   },
 
   methods:{

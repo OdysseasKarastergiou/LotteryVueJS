@@ -19,9 +19,13 @@
     src="https://img.favpng.com/16/6/19/stock-photography-car-royalty-free-png-favpng-E0kmgvAXMbienrUxAzw37dHwF_t.jpg">
     <p id="finalResult"></p>
     <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 
-    hover:scale-110 flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="saveToHistory" id="HistoryBut">Save Result</button>
+    hover:scale-110 flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" 
+    @click="saveToHistory" id="HistoryBut">
+    Save Result</button>
     <button class="transition duration-500 ease-in-out transform 
-    hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" v-on:click="logOut" id="logOutBut">Log Out</button>
+    hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" 
+    @click="logOut" id="logOutBut">
+    Log Out</button>
 </div>
 </template>
 
@@ -31,10 +35,6 @@ import { db } from '../main'
 
 export default {
     name: 'Draw',
-    props: {
-    msg: String
-
-    },
     data(){
         return{
             betsCounter:1,
