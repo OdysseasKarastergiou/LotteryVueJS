@@ -2,29 +2,42 @@
 <div>
     <div class="text-purple-500 font-bold" id="playerBetsT">Player Bets</div>
     <div class="text-purple-500 font-bold" id="resultBetsT">Final Results </div>
+
     <p class="text-yellow-700 font-extrabold" id="myNumber1"></p>
     <p class="text-yellow-700 font-extrabold" id="myNumber2"></p>
     <p class="text-yellow-700 font-extrabold" id="myNumber4"></p>
     <p class="text-yellow-700 font-extrabold" id="myNumber5"></p>
     <p class="text-yellow-700 font-extrabold" id="myNumber3"></p>
+
     <p class="rounded-full h-24 w-24 flex items-center justify-center" id="result1"></p>
     <p class="rounded-full h-24 w-24 flex items-center justify-center"  id="result2"></p>
     <p class="rounded-full h-24 w-24 flex items-center justify-center" id="result3"></p>
     <p class="rounded-full h-24 w-24 flex items-center justify-center" id="result4"></p>
     <p class="rounded-full h-24 w-24 flex items-center justify-center" id="result5"></p>
     <p class="font-serif text-2xl animate-bounce w-10 h-10 font-bold" id="drawingText">Drawing Numbers...</p>
-    <img class="imgC" v-if="this.winStatus==`lost`" 
+
+    <img class="imgC" 
+    v-if="this.winStatus==`lost`" 
     src="https://www.onlygfx.com/wp-content/uploads/2020/05/fail-stamp-7.png">
-    <img class="imgC" v-if="this.winStatus==`won`" 
+
+    <img class="imgC" 
+    v-if="this.winStatus==`won`" 
     src="https://img.favpng.com/16/6/19/stock-photography-car-royalty-free-png-favpng-E0kmgvAXMbienrUxAzw37dHwF_t.jpg">
+
     <p id="finalResult"></p>
-    <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 
+
+    <button 
+    class="transition duration-500 ease-in-out transform hover:-translate-y-1 
     hover:scale-110 flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" 
-    @click="saveToHistory" id="HistoryBut">
+    @click="saveToHistory" 
+    id="HistoryBut">
     Save Result</button>
-    <button class="transition duration-500 ease-in-out transform 
+
+    <button 
+    class="transition duration-500 ease-in-out transform 
     hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" 
-    @click="logOut" id="logOutBut">
+    @click="logOut" 
+    id="logOutBut">
     Log Out</button>
 </div>
 </template>

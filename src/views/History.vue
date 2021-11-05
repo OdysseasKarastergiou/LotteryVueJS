@@ -10,12 +10,17 @@
   <tbody>
     <tr v-for="(row,i) in sortedArray" 
     :key="i">
-      <td class="border-collapse border border-green-800 font-extrabold text-yellow-600">{{row.drawNumbersArray}}</td>
+      <td class="border-collapse border border-green-800 font-extrabold text-yellow-600">
+        {{row.drawNumbersArray}}</td>
       <td :class="{lostBet:row.playedBetStatus===`lost`,wonBet:row.playedBetStatus===`won`}" 
-      class="border-collapse border border-green-800 font-bold">{{row.playedBetStatus}}</td>
+      class="border-collapse border border-green-800 font-bold">
+      {{row.playedBetStatus}}</td>
       <td :class="{lostBet:row.playerWinnings===`0$`,wonBet:row.playerWinnings!==`0$`}" 
-      class="border-collapse border border-green-800 font-bold">{{row.playerWinnings}}</td>
-      <td><button class="text-yellow-900 font-semibold" @click='deleteTableRow(i,row)'>Delete</button></td>
+      class="border-collapse border border-green-800 font-bold">
+      {{row.playerWinnings}}</td>
+      <td><button class="text-yellow-900 font-semibold" 
+      @click='deleteTableRow(i,row)'>
+      Delete</button></td>
     </tr>
     <log-out @logOutEvent="logOut"></log-out>
   </tbody>
