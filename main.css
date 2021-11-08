@@ -292,24 +292,24 @@ div[data-v-58c36b26]{
 }
 
 
-div[data-v-64d91c43]{
+div[data-v-3f0bf67a]{
   border-collapse: collapse;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-td[data-v-64d91c43]{
+td[data-v-3f0bf67a]{
   padding: 5px 20px;
 }
-#logOutBut[data-v-64d91c43]{
+#logOutBut[data-v-3f0bf67a]{
     position:fixed;
     bottom:94%;
     left:70%;
 }
-.lostBet[data-v-64d91c43]{
+.lostBet[data-v-3f0bf67a]{
   color: red;
 }
-.wonBet[data-v-64d91c43]{
+.wonBet[data-v-3f0bf67a]{
   color: green;
 }
 
