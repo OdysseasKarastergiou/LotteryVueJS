@@ -44,7 +44,8 @@
 
 <script>
 import { doc, setDoc } from "firebase/firestore";
-import { db } from '../main'
+import { db } from '../main';
+import { mapGetters } from 'vuex'
 
 export default {
     name: 'Draw',
@@ -60,6 +61,12 @@ export default {
 
         }
     },
+    
+    computed:{
+        ...mapGetters({
+            userMap:'userBetMap'
+        })
+    },
   
     mounted(){ //Starting drawing progress with page change
         this.playerBets();
@@ -73,7 +80,7 @@ export default {
     methods:{
 
     randomNumber(){ //Generating random number and comparing with player bets
-
+    
         let s = Math.floor(Math.random() * (30 - 1 + 1)) + 1;
         for(let check of this.resultsArray){
             while(check === s){
@@ -82,7 +89,7 @@ export default {
         }
         this.resultsArray.push(s);
         let flag = this.resultsArray.indexOf(s) +1;
-        for(let item of this.$store.state.users.betArray){ 
+        for(let item of this.userMap){ 
             if(item === s){
                 document.getElementById("result"+flag).style.backgroundColor = "green";
                 break;
@@ -112,7 +119,7 @@ export default {
 
     checkingResults(){ //comparing final results and printing winnings
         let correct = 0;
-        for(let item of this.$store.state.users.betArray){
+        for(let item of this.userMap){
             for(var i = 0;i<=this.resultsArray.length;i++){
                 if(item === this.resultsArray[i]){
                     correct = correct +1;
@@ -150,10 +157,8 @@ export default {
 
     playerBets(){ //showing player bets
 
-        for(let item of this.$store.state.users.betArray){
+        for(let item of this.userMap){
             document.getElementById("myNumber"+ this.betsCounter).innerHTML = item;
-            console.log(this.$store.state.users.betArray.length);
-
             this.betsCounter = this.betsCounter+1;
         }
     },
@@ -162,7 +167,7 @@ export default {
         setDoc(doc(db, this.$store.state.users.email,this.betId+"" ), {
         betTimestamp : this.currTimestamp,
         drawNumbers : this.resultsArray,
-        playerNumbers : this.$store.state.users.betArray,
+        playerNumbers : this.userMap,
         MoneyWon : this.moneyWon,
         BetStatus : this.winStatus
         }, {merge:true});

@@ -91,8 +91,19 @@ export const store = new Vuex.Store({
 
   },
   getters:{
+    userBetMap: (state) => {
+      return state.users.betArray;
+    },
 
+    usernameMap: (state) => {
+      return state.users.email;
+    },
+
+    UserHistory: (state) => {
+      return state.UserHistory;
+    }
   }
+
 })
 
 

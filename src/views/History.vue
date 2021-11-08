@@ -34,9 +34,10 @@
 
 <script>
 import { db } from '../main.js'
-import { collection, getDocs } from "firebase/firestore";
-import { doc, deleteDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore"
+import { doc, deleteDoc } from "firebase/firestore"
 import LogOut from "../components/LogOut.vue"
+import { mapGetters } from 'vuex'
 
 export default {
     name: 'History',
@@ -68,7 +69,12 @@ export default {
           return 0;
           }
           return this.userHistoryData.sort(compare);
-          }
+          },
+          
+      ...mapGetters({
+        usernameMap: 'usernameMap'
+      })
+          
     },
 
     mounted(){
@@ -77,7 +83,7 @@ export default {
     
     methods:{
       async showPlayerData(){  //getting player history from database 
-        const querySnapshot = await getDocs(collection(db,this.$store.state.users.email));
+        const querySnapshot = await getDocs(collection(db,this.usernameMap));
           querySnapshot.forEach((doc) => {
           this.userHistoryData.push({timestamp:doc.data().betTimestamp,drawNumbersArray:doc.data().drawNumbers,
           playerNumbersArray:doc.data().playerNumbers,playerWinnings:doc.data().MoneyWon,playedBetStatus:doc.data().BetStatus,
@@ -107,7 +113,7 @@ export default {
         this.userHistoryData.splice(idx,1);
         alert("Deleted line from history!");
         console.log(index.playerDocID);
-        deleteDoc(doc(db, this.$store.state.users.email, index.playerDocID));
+        deleteDoc(doc(db, this.usernameMap, index.playerDocID));
       }
 
 

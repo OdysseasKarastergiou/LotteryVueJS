@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="p-5 m-1" id="pickId">
-            Welcome, {{this.$store.state.users.email}}. Pick the numbers!
+            Welcome, {{usernameMap}}. Pick the numbers!
         </div>
         <div>
             <SelectLottery @submitEvent="submitNumbers"></SelectLottery>
@@ -17,6 +17,7 @@
 <script>
 import SelectLottery from "../components/Lottery.vue"
 import LogOut from "../components/LogOut.vue"
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Lottery',
@@ -24,6 +25,12 @@ export default {
   components:{
       SelectLottery,
       LogOut
+  },
+
+  computed:{
+      ...mapGetters({
+          usernameMap: 'usernameMap'
+      })
   },
 
   props: {
