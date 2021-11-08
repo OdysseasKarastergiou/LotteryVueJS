@@ -7,9 +7,9 @@
     <th class="border-collapse border border-green-800 text-red-800">Amount Won</th>
     <th class="border-collapse border border-green-800 text-red-800">Delete Entry</th>
   </thead>
-  <tbody>
-    <tr v-for="(row,i) in sortedArray" 
-    :key="i">
+  <tbody v-for="(row,i) in sortedArray" 
+    :key="i" >
+    <tr v-if="row.drawNumbersArray !== `` " >
       <td class="border-collapse border border-green-800 font-extrabold text-yellow-600">
         {{row.drawNumbersArray}}</td>
       <td :class="{lostBet:row.playedBetStatus===`lost`,wonBet:row.playedBetStatus===`won`}" 
@@ -112,7 +112,6 @@ export default {
       deleteTableRow: function(idx,index){  //deleting table row and finding DocumentId to delete from database
         this.userHistoryData.splice(idx,1);
         alert("Deleted line from history!");
-        console.log(index.playerDocID);
         deleteDoc(doc(db, this.usernameMap, index.playerDocID));
       }
 

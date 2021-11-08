@@ -73,7 +73,7 @@ export const routes = [
     name: 'History',
     component: History,
     beforeEnter:(to,from,next) =>{
-      if(store.state.authenticated == false){
+      if(store.state.authenticated == false || store.state.finishedDraw == false){
         next(false);
       }else{
         next();
